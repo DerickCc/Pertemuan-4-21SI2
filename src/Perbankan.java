@@ -42,8 +42,10 @@ public class Perbankan {
                 if(norekt.equals(norek[1])){
                     System.out.print("Masukkan nominal transfer: ");
                     int nominal = keyboard.nextInt();
-                    if(nominal<=saldo[x] & nominal!=0){
+                    if(nominal<saldo[x] & nominal!=0){
                         saldo[x]=saldo[x]-nominal;
+                        int tmp = nominal;
+                        saldo[1]=saldo[1]+tmp;
                         mutasi.add(new Mutasi(norekt, nama[1], nominal));
                         System.out.println("\n<TRANSAKSI BERHASIL>");
                     }
